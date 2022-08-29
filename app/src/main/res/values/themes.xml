@@ -1,0 +1,14 @@
+<resources>
+
+    <style name="Theme.PequeniaTv" parent="@style/Theme.Leanback" >
+        <item name="android:colorPrimary">#00A2B8</item>
+        <item name="android:windowAllowEnterTransitionOverlap">true</item>
+        <item name="android:windowAllowReturnTransitionOverlap">true</item>
+    </style>
+
+    <style name="Theme.Example.Leanback.CustomTitle" parent="Theme.Leanback.Browse">
+        <item name="browseTitleViewLayout">@layout/titleview</item>
+        <item name="browseRowsMarginTop">120dp</item>
+    </style>
+
+</resources>

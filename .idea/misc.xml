@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/gradient_background.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_iptv.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_live_video.xml" value="0.3094315245478036" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.146640826873385" />
+        <entry key="app/src/main/res/layout/custom_titleview.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/titleview.xml" value="0.3094315245478036" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
