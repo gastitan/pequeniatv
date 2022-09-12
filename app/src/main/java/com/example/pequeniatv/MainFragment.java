@@ -6,7 +6,6 @@ import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.leanback.app.BrowseSupportFragment;
 import androidx.leanback.widget.ArrayObjectAdapter;
 import androidx.leanback.widget.HeaderItem;
@@ -26,9 +25,6 @@ public class MainFragment extends BrowseSupportFragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        setTitle("Pequeña TV");
-        setIcon();
 
         ListRowPresenter listRowPresenter = new ListRowPresenter();
         ArrayObjectAdapter rowsAdapter = new ArrayObjectAdapter(listRowPresenter);
@@ -65,10 +61,4 @@ public class MainFragment extends BrowseSupportFragment {
         setAdapter(rowsAdapter);
     }
 
-    private void setIcon() {
-        var activity = getActivity();
-        if (activity != null && activity.getResources() != null) {
-            setBadgeDrawable(ResourcesCompat.getDrawable(getResources(), R.drawable.logo3,null));
-        }
-    }
 }

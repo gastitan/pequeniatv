@@ -40,11 +40,4 @@ public class Card {
         this.source = source;
     }
 
-    public String getBackground() {
-        return background;
-    }
-
-    public void setBackground(String background) {
-        this.background = background;
-    }
 }
