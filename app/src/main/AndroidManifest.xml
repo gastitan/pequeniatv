@@ -14,15 +14,21 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.PequeniaTv">
-        <activity
-            android:name=".MainActivity"
+
+        <activity android:name=".ApiLoginActivity"
             android:exported="true"
-            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+            android:theme="@style/Theme.AppCompat">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.Example.Leanback.CustomTitle">
+
         </activity>
 
         <activity

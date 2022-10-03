@@ -17,33 +17,26 @@ import androidx.leanback.widget.Row;
 import androidx.leanback.widget.RowPresenter;
 
 import com.example.pequeniatv.model.Card;
+import com.example.pequeniatv.model.Channel;
 import com.example.pequeniatv.presenter.CardPresenter;
-import com.example.pequeniatv.utils.ChannelSources;
+import com.example.pequeniatv.repository.ChannelsRepository;
 
 public class MainFragment extends BrowseSupportFragment {
+
+    ChannelsRepository repository;
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        ListRowPresenter listRowPresenter = new ListRowPresenter();
-        ArrayObjectAdapter rowsAdapter = new ArrayObjectAdapter(listRowPresenter);
-
-        var channels = ChannelSources.getChannels();
-
-        for (String channelTitle : channels.keySet()) {
-            ArrayObjectAdapter listRowAdapter = new ArrayObjectAdapter(new CardPresenter());
-            listRowAdapter.addAll(0, channels.get(channelTitle));
-
-            var header = new HeaderItem(1, channelTitle);
-            rowsAdapter.add(new ListRow(header, listRowAdapter));
-        }
+        repository = new ChannelsRepository();
+        ArrayObjectAdapter rowsAdapter = repository.getChannels(getContext());
 
         var onItemViewClickedListener = new OnItemViewClickedListener() {
 
             @Override
             public void onItemClicked(Presenter.ViewHolder itemViewHolder, Object item, RowPresenter.ViewHolder rowViewHolder, Row row) {
-                var card = (Card) item;
+                var card = (Channel) item;
                 Intent intent;
                 if (card.getSource().equals("iptv")) {
                     intent = new Intent(getContext(), IptvActivity.class);
@@ -51,7 +44,7 @@ public class MainFragment extends BrowseSupportFragment {
                     intent = new Intent(getContext(), LiveVideoActivity.class);
                 }
 
-                intent.putExtra("channel", ((Card) item).getChannel());
+                intent.putExtra("channel", ((Channel) item).getChannel());
                 startActivity(intent);
             }
         };

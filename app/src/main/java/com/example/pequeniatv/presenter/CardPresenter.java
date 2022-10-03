@@ -8,6 +8,7 @@ import androidx.leanback.widget.Presenter;
 
 import com.bumptech.glide.Glide;
 import com.example.pequeniatv.model.Card;
+import com.example.pequeniatv.model.Channel;
 
 public class CardPresenter extends Presenter {
 
@@ -22,13 +23,13 @@ public class CardPresenter extends Presenter {
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, Object item) {
-        var card = (Card) item;
+        var channel = (Channel) item;
         var cardView = (ImageCardView) viewHolder.view;
-        cardView.setTitleText(card.getName());
+        cardView.setTitleText(channel.getName());
         cardView.setMainImageDimensions(176, 250);
 
         var mainImageView = cardView.getMainImageView();
-        Glide.with(mainImageView).load(card.getLogo()).into(mainImageView);
+        Glide.with(mainImageView).load(channel.getLogo()).into(mainImageView);
     }
 
     @Override
